@@ -1,0 +1,82 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<table class="table table-hover">
+    <tr>
+        <th>Age</th>
+        <td><%= result._age %></td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>
+        <% if (result._donGen == 0){%>
+            Male            
+        <% }else if (result._donGen == 1){%>
+            Female
+        <% }else {%>
+            Other
+        <% }%>
+            
+        </td>
+    </tr>
+    <tr>
+        <th>Place</th>
+        <td><%=result._place %></td>
+    </tr>
+    <tr>
+        <th>Blood Group</th>
+        <td>
+            <% switch(result._grp) {
+             case '0':%>
+                 A+ve
+            <% break;
+             case '1':%>
+                 A-ve
+            <% break;
+             case '2':%>
+                 B+ve
+            <% break;
+             case '3':%>
+                 B-ve
+            <% break;
+             case '4':%>
+                 O+ve
+            <% break;
+            case '5':%>
+                 O-ve
+            <% break;
+            case '6':%>
+                 AB+ve
+            <% break;
+            case '7':%>
+                 AB-ve
+            <% } %>
+        </td>
+    </tr>
+    <tr>
+        <th>Medical Conditions</th>
+        <td>
+            <%if (result._medCond == true){%>
+                Yes
+            <% }else{ %>
+                No
+            <%}%>
+        </td>
+    </tr>
+    <tr>
+        <th>Availability/Status</th>
+        <td>
+            <%if (result._active == false) {%>
+                Not Available
+            <% }else{ %>
+                Available
+            <%}%>
+        </td>
+    </tr>
+    <tr>
+        <th>Token</th>
+        <td>
+            <%= result.token %>
+        </td>
+    </tr>
+</table>
