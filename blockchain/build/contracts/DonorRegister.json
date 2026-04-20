@@ -1,0 +1,3498 @@
+{
+  "contractName": "DonorRegister",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "donorId",
+          "type": "address"
+        }
+      ],
+      "name": "DonorDeactivated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "donorId",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum DonorRegister.BloodGroup",
+          "name": "bloodGroup",
+          "type": "uint8"
+        }
+      ],
+      "name": "DonorRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Mint",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_donorId",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_age",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "_place",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_mobile",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_medCondition",
+          "type": "bool"
+        },
+        {
+          "internalType": "enum DonorRegister.Gender",
+          "name": "_gender",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum DonorRegister.BloodGroup",
+          "name": "_bloodGroup",
+          "type": "uint8"
+        }
+      ],
+      "name": "setDonor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_donorId",
+          "type": "address"
+        }
+      ],
+      "name": "getDonor",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "dName",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "age",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "place",
+          "type": "string"
+        },
+        {
+          "internalType": "enum DonorRegister.Gender",
+          "name": "donorGender",
+          "type": "uint8"
+        },
+        {
+          "internalType": "enum DonorRegister.BloodGroup",
+          "name": "bloodGroup",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "medicalCondition",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "lastDonated",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "donationCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenBalance",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_donorId",
+          "type": "address"
+        }
+      ],
+      "name": "deactivateDonor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"donorId\",\"type\":\"address\"}],\"name\":\"DonorDeactivated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"donorId\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"enum DonorRegister.BloodGroup\",\"name\":\"bloodGroup\",\"type\":\"uint8\"}],\"name\":\"DonorRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Mint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_donorId\",\"type\":\"address\"}],\"name\":\"deactivateDonor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_donorId\",\"type\":\"address\"}],\"name\":\"getDonor\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"dName\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"age\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"place\",\"type\":\"string\"},{\"internalType\":\"enum DonorRegister.Gender\",\"name\":\"donorGender\",\"type\":\"uint8\"},{\"internalType\":\"enum DonorRegister.BloodGroup\",\"name\":\"bloodGroup\",\"type\":\"uint8\"},{\"internalType\":\"bool\",\"name\":\"medicalCondition\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"lastDonated\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"donationCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenBalance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_donorId\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"_age\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"_place\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_mobile\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_medCondition\",\"type\":\"bool\"},{\"internalType\":\"enum DonorRegister.Gender\",\"name\":\"_gender\",\"type\":\"uint8\"},{\"internalType\":\"enum DonorRegister.BloodGroup\",\"name\":\"_bloodGroup\",\"type\":\"uint8\"}],\"name\":\"setDonor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DonorRegister.sol\":\"DonorRegister\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/Bdctoken.sol\":{\"keccak256\":\"0x570bb464898586a68d8290e42cef304abc4b6022ae083c3ff3b73880ac0e8cb9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ccdcd57534cdfa0cd74b6f3f788ac1677a2bf25fdad04815bbd954cb6a96479f\",\"dweb:/ipfs/QmRvDfxvZkc8XN9YRzR9rg8ZisiZQoDyjxEZZQJE9mjFVr\"]},\"project:/contracts/DonorRegister.sol\":{\"keccak256\":\"0xbfc6072bdcb71001eddc9377bd90083d4c1d6791153909aa3c3bace62494c36d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://32f6ad9e539a5c222337c610648c6b577c72ea64af2fdc67143bdaf1142ad84e\",\"dweb:/ipfs/QmTepmBSP58t7BBu8grGAWSX3JEMrENnjU8p2kY5mE9rqA\"]}},\"version\":1}",
+  "bytecode": "0x60806040523461013a575f610014815461013e565b601f8111610110575b5060267f426c6f6f6420446f6e6174696f6e20436f696e00000000000000000000000000018155600190610051825461013e565b601f81116100e7575b5060066242444360e81b019091556002805460ff19169055620f42406003819055600480546001600160a01b031916339081178255835260056020908152604093849020839055905492519182526001600160a01b0392909216917f0f6798a560793a54c3bcfe86a93cde1e73087d944c0ea20544137d412139688591a2604051610c8f90816101778239f35b828252601f60208320910160051c8101905b818110610106575061005a565b82815583016100f9565b818052601f60208320910160051c8101905b81811061012f575061001d565b828155600101610122565b5f80fd5b90600182811c9216801561016c575b602083101461015857565b634e487b7160e01b5f52602260045260245ffd5b91607f169161014d56fe6080806040526004361015610012575f80fd5b5f3560e01c90816306fdde03146109bf5750806318160ddd146109a2578063313ce5671461098257806370a082311461094a5780638da5cb5b1461092257806395d89b411461084257806396c5904314610749578063b76863a8146106775763ef2548141461007f575f80fd5b346106735761010036600319011261067357610099610b95565b60243567ffffffffffffffff8111610673576100b9903690600401610bb8565b60449081359060ff821680920361067357606492833567ffffffffffffffff8111610673576100ec903690600401610bb8565b60a435948515158096036106735760c43592600384101561067357600860e4351015610673576004546001600160a01b039790881689891614610631578789165f52600660205260ff600460405f20015460181c166105ef576012871015806105e4575b156105a25761054c5784511561051457505060405193610140850185811067ffffffffffffffff821117610440576040528385526020850152604084015260843560608401525f608084015260a083015260e43560c0830152600160e08301525f6101008301525f6101208301528284165f52600660205260405f2092825180519067ffffffffffffffff82116104405781906101ed8754610a5c565b601f81116104c7575b50602090601f831160011461045f575f92610454575b50508160011b915f199060031b1c19161784555b6001840160ff60208501511660ff19825416179055604083015180519067ffffffffffffffff821161044057819061025b6002880154610a5c565b601f81116103f0575b50602090601f8311600114610382575f92610377575b50508160011b915f199060031b1c19161760028501555b606083015160038501556080830151151593600481015460a085015160038110156103635760c0860151956008871015610363577f779163cb568883acd4f53ecd8b9b240d9167817266c43fa521301a32e8fd290b9761034c9762ff00006101209461ff0060069760ff63ff00000060e0890151151560181b1696169063ffffffff1916179160081b16179160101b161717600485015561010081015160058501550151910155604051928392604084526040840190610b57565b9461035c6020840160e435610bab565b16930390a2005b634e487b7160e01b5f52602160045260245ffd5b015190505f8061027a565b9250600287015f5260205f20905f935b601f19841685106103d5576001945083601f198116106103bd575b505050811b016002850155610291565b01515f1960f88460031b161c191690555f80806103ad565b81810151835560209485019460019093019290910190610392565b909150600287015f5260205f20601f840160051c810160208510610439575b90849392915b601f830160051c8201811061042b575050610264565b5f8155859450600101610415565b508061040f565b634e487b7160e01b5f52604160045260245ffd5b015190505f8061020c565b9250865f5260205f20905f935b601f19841685106104ac576001945083601f19811610610494575b505050811b018455610220565b01515f1960f88460031b161c191690555f8080610487565b8181015183556020948501946001909301929091019061046c565b909150865f5260205f20601f840160051c81016020851061050d575b90849392915b601f830160051c820181106104ff5750506101f6565b5f81558594506001016104e9565b50806104e3565b734e616d652063616e6e6f7420626520656d70747960601b6040519162461bcd60e51b83526020600484015260146024840152820152fd5b6a361031b7b73234ba34b7b760a91b6084927f446f6e6f72206861732061206469737175616c696679696e67206d65646963616040519362461bcd60e51b855260206004860152602b6024860152840152820152fd5b507f416765206d757374206265206265747765656e20313820616e642036350000006040519162461bcd60e51b835260206004840152601d6024840152820152fd5b506041871115610150565b507f446f6e6f7220616c7265616479207265676973746572656400000000000000006040519162461bcd60e51b83526020600484015260186024840152820152fd5b507f4f776e65722063616e6e6f74206265206120646f6e6f720000000000000000006040519162461bcd60e51b83526020600484015260176024840152820152fd5b5f80fd5b3461067357602036600319011261067357610690610b95565b6004546001600160a01b039190821633036107045716805f5260066020526106c460ff600460405f20015460181c16610c0e565b805f526006602052600460405f200163ff0000001981541690557f12c3a9eff30b03d9267977d7415d257ec232160de05e168ed3331b2df758407c5f80a2005b60405162461bcd60e51b815260206004820152601860248201527f4f6e6c79206f776e65722063616e2063616c6c207468697300000000000000006044820152606490fd5b34610673576020366003190112610673576001600160a01b0361076a610b95565b16805f52600660205261078960ff600460405f20015460181c16610c0e565b5f52600660205260405f2060ff60018201541660048201549060ff8260081c16906005840154600685015490600560205261080060405f2054936107d860026107d18a610ab6565b9901610ab6565b6107ed60405199610120808c528b0190610b57565b9160208a015288820360408a0152610b57565b93600381101561036357869560ff91606088015261082660808801838360101c16610bab565b16151560a086015260c085015260e08401526101008301520390f35b34610673575f366003190112610673576040515f600180549061086482610a5c565b808552918181169081156108fb57506001146108a3575b61089f8461088b81860382610a94565b604051918291602083526020830190610b57565b0390f35b5f81815292507fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf65b8284106108e357505050810160200161088b8261087b565b805460208587018101919091529093019281016108cb565b60ff191660208087019190915292151560051b8501909201925061088b915083905061087b565b34610673575f366003190112610673576004546040516001600160a01b039091168152602090f35b34610673576020366003190112610673576001600160a01b0361096b610b95565b165f526005602052602060405f2054604051908152f35b34610673575f36600319011261067357602060ff60025416604051908152f35b34610673575f366003190112610673576020600354604051908152f35b34610673575f366003190112610673575f80546109db81610a5c565b808452906001908181169081156108fb5750600114610a045761089f8461088b81860382610a94565b5f80805292507f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5635b828410610a4457505050810160200161088b8261087b565b80546020858701810191909152909301928101610a2c565b90600182811c92168015610a8a575b6020831014610a7657565b634e487b7160e01b5f52602260045260245ffd5b91607f1691610a6b565b90601f8019910116810190811067ffffffffffffffff82111761044057604052565b9060405191825f825492610ac984610a5c565b9081845260019485811690815f14610b345750600114610af4575b5050610af292500383610a94565b565b909391505f52602090815f20935f915b818310610b1c575050610af293508201015f80610ae4565b85548884018501529485019487945091830191610b04565b915050610af294506020925060ff191682840152151560051b8201015f80610ae4565b91908251928382525f5b848110610b81575050825f602080949584010152601f8019910116010190565b602081830181015184830182015201610b61565b600435906001600160a01b038216820361067357565b9060088210156103635752565b81601f820112156106735780359067ffffffffffffffff82116104405760405192610bed601f8401601f191660200185610a94565b8284526020838301011161067357815f926020809301838601378301015290565b15610c1557565b606460405162461bcd60e51b815260206004820152602060248201527f446f6e6f72206e6f742072656769737465726564206f7220696e6163746976656044820152fdfea26469706673582212203c2bfc114e09841b3db5520b9e4026c570a0eaf533f975771cf7960cbdc3e70764736f6c63430008140033",
+  "deployedBytecode": "0x6080806040526004361015610012575f80fd5b5f3560e01c90816306fdde03146109bf5750806318160ddd146109a2578063313ce5671461098257806370a082311461094a5780638da5cb5b1461092257806395d89b411461084257806396c5904314610749578063b76863a8146106775763ef2548141461007f575f80fd5b346106735761010036600319011261067357610099610b95565b60243567ffffffffffffffff8111610673576100b9903690600401610bb8565b60449081359060ff821680920361067357606492833567ffffffffffffffff8111610673576100ec903690600401610bb8565b60a435948515158096036106735760c43592600384101561067357600860e4351015610673576004546001600160a01b039790881689891614610631578789165f52600660205260ff600460405f20015460181c166105ef576012871015806105e4575b156105a25761054c5784511561051457505060405193610140850185811067ffffffffffffffff821117610440576040528385526020850152604084015260843560608401525f608084015260a083015260e43560c0830152600160e08301525f6101008301525f6101208301528284165f52600660205260405f2092825180519067ffffffffffffffff82116104405781906101ed8754610a5c565b601f81116104c7575b50602090601f831160011461045f575f92610454575b50508160011b915f199060031b1c19161784555b6001840160ff60208501511660ff19825416179055604083015180519067ffffffffffffffff821161044057819061025b6002880154610a5c565b601f81116103f0575b50602090601f8311600114610382575f92610377575b50508160011b915f199060031b1c19161760028501555b606083015160038501556080830151151593600481015460a085015160038110156103635760c0860151956008871015610363577f779163cb568883acd4f53ecd8b9b240d9167817266c43fa521301a32e8fd290b9761034c9762ff00006101209461ff0060069760ff63ff00000060e0890151151560181b1696169063ffffffff1916179160081b16179160101b161717600485015561010081015160058501550151910155604051928392604084526040840190610b57565b9461035c6020840160e435610bab565b16930390a2005b634e487b7160e01b5f52602160045260245ffd5b015190505f8061027a565b9250600287015f5260205f20905f935b601f19841685106103d5576001945083601f198116106103bd575b505050811b016002850155610291565b01515f1960f88460031b161c191690555f80806103ad565b81810151835560209485019460019093019290910190610392565b909150600287015f5260205f20601f840160051c810160208510610439575b90849392915b601f830160051c8201811061042b575050610264565b5f8155859450600101610415565b508061040f565b634e487b7160e01b5f52604160045260245ffd5b015190505f8061020c565b9250865f5260205f20905f935b601f19841685106104ac576001945083601f19811610610494575b505050811b018455610220565b01515f1960f88460031b161c191690555f8080610487565b8181015183556020948501946001909301929091019061046c565b909150865f5260205f20601f840160051c81016020851061050d575b90849392915b601f830160051c820181106104ff5750506101f6565b5f81558594506001016104e9565b50806104e3565b734e616d652063616e6e6f7420626520656d70747960601b6040519162461bcd60e51b83526020600484015260146024840152820152fd5b6a361031b7b73234ba34b7b760a91b6084927f446f6e6f72206861732061206469737175616c696679696e67206d65646963616040519362461bcd60e51b855260206004860152602b6024860152840152820152fd5b507f416765206d757374206265206265747765656e20313820616e642036350000006040519162461bcd60e51b835260206004840152601d6024840152820152fd5b506041871115610150565b507f446f6e6f7220616c7265616479207265676973746572656400000000000000006040519162461bcd60e51b83526020600484015260186024840152820152fd5b507f4f776e65722063616e6e6f74206265206120646f6e6f720000000000000000006040519162461bcd60e51b83526020600484015260176024840152820152fd5b5f80fd5b3461067357602036600319011261067357610690610b95565b6004546001600160a01b039190821633036107045716805f5260066020526106c460ff600460405f20015460181c16610c0e565b805f526006602052600460405f200163ff0000001981541690557f12c3a9eff30b03d9267977d7415d257ec232160de05e168ed3331b2df758407c5f80a2005b60405162461bcd60e51b815260206004820152601860248201527f4f6e6c79206f776e65722063616e2063616c6c207468697300000000000000006044820152606490fd5b34610673576020366003190112610673576001600160a01b0361076a610b95565b16805f52600660205261078960ff600460405f20015460181c16610c0e565b5f52600660205260405f2060ff60018201541660048201549060ff8260081c16906005840154600685015490600560205261080060405f2054936107d860026107d18a610ab6565b9901610ab6565b6107ed60405199610120808c528b0190610b57565b9160208a015288820360408a0152610b57565b93600381101561036357869560ff91606088015261082660808801838360101c16610bab565b16151560a086015260c085015260e08401526101008301520390f35b34610673575f366003190112610673576040515f600180549061086482610a5c565b808552918181169081156108fb57506001146108a3575b61089f8461088b81860382610a94565b604051918291602083526020830190610b57565b0390f35b5f81815292507fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf65b8284106108e357505050810160200161088b8261087b565b805460208587018101919091529093019281016108cb565b60ff191660208087019190915292151560051b8501909201925061088b915083905061087b565b34610673575f366003190112610673576004546040516001600160a01b039091168152602090f35b34610673576020366003190112610673576001600160a01b0361096b610b95565b165f526005602052602060405f2054604051908152f35b34610673575f36600319011261067357602060ff60025416604051908152f35b34610673575f366003190112610673576020600354604051908152f35b34610673575f366003190112610673575f80546109db81610a5c565b808452906001908181169081156108fb5750600114610a045761089f8461088b81860382610a94565b5f80805292507f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5635b828410610a4457505050810160200161088b8261087b565b80546020858701810191909152909301928101610a2c565b90600182811c92168015610a8a575b6020831014610a7657565b634e487b7160e01b5f52602260045260245ffd5b91607f1691610a6b565b90601f8019910116810190811067ffffffffffffffff82111761044057604052565b9060405191825f825492610ac984610a5c565b9081845260019485811690815f14610b345750600114610af4575b5050610af292500383610a94565b565b909391505f52602090815f20935f915b818310610b1c575050610af293508201015f80610ae4565b85548884018501529485019487945091830191610b04565b915050610af294506020925060ff191682840152151560051b8201015f80610ae4565b91908251928382525f5b848110610b81575050825f602080949584010152601f8019910116010190565b602081830181015184830182015201610b61565b600435906001600160a01b038216820361067357565b9060088210156103635752565b81601f820112156106735780359067ffffffffffffffff82116104405760405192610bed601f8401601f191660200185610a94565b8284526020838301011161067357815f926020809301838601378301015290565b15610c1557565b606460405162461bcd60e51b815260206004820152602060248201527f446f6e6f72206e6f742072656769737465726564206f7220696e6163746976656044820152fdfea26469706673582212203c2bfc114e09841b3db5520b9e4026c570a0eaf533f975771cf7960cbdc3e70764736f6c63430008140033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "83:2834:1:-:0;;;;;;102:21:0;83:2834:1;;;;:::i;:::-;;;;;;-1:-1:-1;83:2834:1;;;;;;152:5:0;83:2834:1;;;;;:::i;:::-;;;;;;-1:-1:-1;;;;;;;83:2834:1;;;187:1:0;83:2834:1;;-1:-1:-1;;83:2834:1;;;223:9:0;83:2834:1;;;;582:18:0;83:2834:1;;-1:-1:-1;;;;;;83:2834:1;590:10:0;83:2834:1;;;;;;;610:9:0;83:2834:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;83:2834:1;;;;;655:24:0;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "83:2834:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;:::i;:::-;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;83:2834:1;;;;;;;1112:17;83:2834;;;;;;;1176:6;83:2834;;;;;;;1176:25;83:2834;;;;;;1256:2;1248:10;;;:24;;;83:2834;;;;;;;;1404:23;83:2834;;;;;;;;;;;;;;;;;;;;;;;;;1482:396;;83:2834;;1482:396;;83:2834;;;;1482:396;;83:2834;;;1482:396;;83:2834;;1482:396;;83:2834;;;;1482:396;;83:2834;;;1482:396;;83:2834;;;1482:396;;83:2834;;1482:396;;;83:2834;;;;;;1176:6;83:2834;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1482:396;;83:2834;;;;;;;;;;;1482:396;;83:2834;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1482:396;;83:2834;;;;;;1482:396;;83:2834;;;;;;;;;1482:396;;83:2834;;;;;;;;1482:396;;83:2834;;;;;;;;1894:45;1482:396;83:2834;1482:396;83:2834;1482:396;;83:2834;1176:6;1482:396;83:2834;;;1482:396;;83:2834;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1482:396;;83:2834;;;;;1482:396;83:2834;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;1894:45;;;;83:2834;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;-1:-1:-1;83:2834:1;;;;-1:-1:-1;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1248:24;1262:10;1270:2;1262:10;;;1248:24;;83:2834;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;:::i;:::-;;;-1:-1:-1;;;;;83:2834:1;;;;486:10:0;:19;83:2834:1;;;;;;761:6;83:2834;;753:64;83:2834;;;;;761:19;83:2834;;;;753:64;:::i;:::-;83:2834;;;761:6;83:2834;;;;;;2834:25;83:2834;;;;;;;2882:26;83:2834;2882:26;;83:2834;;;;-1:-1:-1;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;-1:-1:-1;;;;;83:2834:1;;:::i;:::-;;;;;761:6;83:2834;;753:64;83:2834;;;;;761:19;83:2834;;;;753:64;:::i;:::-;83:2834;;761:6;83:2834;;;;;;;2519:5;;83:2834;;;2559:13;;83:2834;;;;;;;2644:13;;;;83:2834;761:6;2671:15;;83:2834;;2644:13;83:2834;;;;;;;;;2538:7;83:2834;;;:::i;:::-;2538:7;;83:2834;:::i;:::-;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;129:28:0;83:2834:1;;;;;;:::i;:::-;;;;;;;;;129:28:0;;;;83:2834:1;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;-1:-1:-1;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;-1:-1:-1;83:2834:1;;-1:-1:-1;83:2834:1;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;-1:-1:-1;;;;;83:2834:1;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;-1:-1:-1;;;;;83:2834:1;;:::i;:::-;;;;775:9:0;83:2834:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;163:25:0;83:2834:1;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;-1:-1:-1;83:2834:1;;;;;;;-1:-1:-1;;;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;83:2834:1;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:::o;:::-;;;;;-1:-1:-1;83:2834:1;;;;-1:-1:-1;83:2834:1;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;83:2834:1;;;;;;:::o;:::-;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;83:2834:1;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;83:2834:1;;;;;;;;;;;;;;:::o;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport \"./Bdctoken.sol\";\n\ncontract DonorRegister is Bdctoken {\n    enum Gender   { Male, Female, Other }\n    enum BloodGroup { AP, AN, BP, BN, OP, ON, ABP, ABN }\n\n    struct Donor {\n        string  name;\n        uint8   age;\n        string  place;\n        uint256 mobile;\n        bool    medicalCondition;\n        Gender  donorGender;\n        BloodGroup bloodGroup;\n        bool    isActive;\n        uint256 lastDonated;\n        uint256 donationCount;\n    }\n\n    mapping(address => Donor) internal donors;\n\n    event DonorRegistered(address indexed donorId, string name, BloodGroup bloodGroup);\n    event DonorDeactivated(address indexed donorId);\n\n    modifier donorExists(address id) {\n        require(donors[id].isActive, \"Donor not registered or inactive\");\n        _;\n    }\n\n    function setDonor(\n        address _donorId,\n        string  memory _name,\n        uint8   _age,\n        string  memory _place,\n        uint256 _mobile,\n        bool    _medCondition,\n        Gender  _gender,\n        BloodGroup _bloodGroup\n    ) public {\n        require(_donorId != owner, \"Owner cannot be a donor\");\n        require(!donors[_donorId].isActive, \"Donor already registered\");\n        require(_age >= 18 && _age <= 65, \"Age must be between 18 and 65\");\n        require(!_medCondition, \"Donor has a disqualifying medical condition\");\n        require(bytes(_name).length > 0, \"Name cannot be empty\");\n\n        donors[_donorId] = Donor({\n            name:             _name,\n            age:              _age,\n            place:            _place,\n            mobile:           _mobile,\n            medicalCondition: _medCondition,\n            donorGender:      _gender,\n            bloodGroup:       _bloodGroup,\n            isActive:         true,\n            lastDonated:      0,\n            donationCount:    0\n        });\n\n        emit DonorRegistered(_donorId, _name, _bloodGroup);\n    }\n\n    function getDonor(address _donorId)\n        public\n        view\n        donorExists(_donorId)\n        returns (\n            string memory  dName,\n            uint8          age,\n            string memory  place,\n            Gender         donorGender,\n            BloodGroup     bloodGroup,\n            bool           medicalCondition,\n            uint256        lastDonated,\n            uint256        donationCount,\n            uint256        tokenBalance\n        )\n    {\n        Donor storage d = donors[_donorId];\n        return (\n            d.name,\n            d.age,\n            d.place,\n            d.donorGender,\n            d.bloodGroup,\n            d.medicalCondition,\n            d.lastDonated,\n            d.donationCount,\n            balanceOf(_donorId)\n        );\n    }\n\n    function deactivateDonor(address _donorId) public onlyOwner donorExists(_donorId) {\n        donors[_donorId].isActive = false;\n        emit DonorDeactivated(_donorId);\n    }\n}",
+  "sourcePath": "C:\\Users\\Harshith\\Downloads\\BloodBlock-master\\blockchain\\contracts\\DonorRegister.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/DonorRegister.sol",
+    "exportedSymbols": {
+      "Bdctoken": [
+        123
+      ],
+      "DonorRegister": [
+        365
+      ]
+    },
+    "id": 366,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 125,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:1"
+      },
+      {
+        "absolutePath": "project:/contracts/Bdctoken.sol",
+        "file": "./Bdctoken.sol",
+        "id": 126,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 366,
+        "sourceUnit": 124,
+        "src": "57:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 127,
+              "name": "Bdctoken",
+              "nameLocations": [
+                "109:8:1"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 123,
+              "src": "109:8:1"
+            },
+            "id": 128,
+            "nodeType": "InheritanceSpecifier",
+            "src": "109:8:1"
+          }
+        ],
+        "canonicalName": "DonorRegister",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 365,
+        "linearizedBaseContracts": [
+          365,
+          123
+        ],
+        "name": "DonorRegister",
+        "nameLocation": "92:13:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DonorRegister.Gender",
+            "id": 132,
+            "members": [
+              {
+                "id": 129,
+                "name": "Male",
+                "nameLocation": "140:4:1",
+                "nodeType": "EnumValue",
+                "src": "140:4:1"
+              },
+              {
+                "id": 130,
+                "name": "Female",
+                "nameLocation": "146:6:1",
+                "nodeType": "EnumValue",
+                "src": "146:6:1"
+              },
+              {
+                "id": 131,
+                "name": "Other",
+                "nameLocation": "154:5:1",
+                "nodeType": "EnumValue",
+                "src": "154:5:1"
+              }
+            ],
+            "name": "Gender",
+            "nameLocation": "129:6:1",
+            "nodeType": "EnumDefinition",
+            "src": "124:37:1"
+          },
+          {
+            "canonicalName": "DonorRegister.BloodGroup",
+            "id": 141,
+            "members": [
+              {
+                "id": 133,
+                "name": "AP",
+                "nameLocation": "184:2:1",
+                "nodeType": "EnumValue",
+                "src": "184:2:1"
+              },
+              {
+                "id": 134,
+                "name": "AN",
+                "nameLocation": "188:2:1",
+                "nodeType": "EnumValue",
+                "src": "188:2:1"
+              },
+              {
+                "id": 135,
+                "name": "BP",
+                "nameLocation": "192:2:1",
+                "nodeType": "EnumValue",
+                "src": "192:2:1"
+              },
+              {
+                "id": 136,
+                "name": "BN",
+                "nameLocation": "196:2:1",
+                "nodeType": "EnumValue",
+                "src": "196:2:1"
+              },
+              {
+                "id": 137,
+                "name": "OP",
+                "nameLocation": "200:2:1",
+                "nodeType": "EnumValue",
+                "src": "200:2:1"
+              },
+              {
+                "id": 138,
+                "name": "ON",
+                "nameLocation": "204:2:1",
+                "nodeType": "EnumValue",
+                "src": "204:2:1"
+              },
+              {
+                "id": 139,
+                "name": "ABP",
+                "nameLocation": "208:3:1",
+                "nodeType": "EnumValue",
+                "src": "208:3:1"
+              },
+              {
+                "id": 140,
+                "name": "ABN",
+                "nameLocation": "213:3:1",
+                "nodeType": "EnumValue",
+                "src": "213:3:1"
+              }
+            ],
+            "name": "BloodGroup",
+            "nameLocation": "171:10:1",
+            "nodeType": "EnumDefinition",
+            "src": "166:52:1"
+          },
+          {
+            "canonicalName": "DonorRegister.Donor",
+            "id": 164,
+            "members": [
+              {
+                "constant": false,
+                "id": 143,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "255:4:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "247:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 142,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "247:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 145,
+                "mutability": "mutable",
+                "name": "age",
+                "nameLocation": "277:3:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "269:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 144,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "269:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 147,
+                "mutability": "mutable",
+                "name": "place",
+                "nameLocation": "298:5:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "290:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 146,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "290:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 149,
+                "mutability": "mutable",
+                "name": "mobile",
+                "nameLocation": "321:6:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "313:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 148,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "313:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 151,
+                "mutability": "mutable",
+                "name": "medicalCondition",
+                "nameLocation": "345:16:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "337:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 150,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "337:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 154,
+                "mutability": "mutable",
+                "name": "donorGender",
+                "nameLocation": "379:11:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "371:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Gender_$132",
+                  "typeString": "enum DonorRegister.Gender"
+                },
+                "typeName": {
+                  "id": 153,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 152,
+                    "name": "Gender",
+                    "nameLocations": [
+                      "371:6:1"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 132,
+                    "src": "371:6:1"
+                  },
+                  "referencedDeclaration": 132,
+                  "src": "371:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Gender_$132",
+                    "typeString": "enum DonorRegister.Gender"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 157,
+                "mutability": "mutable",
+                "name": "bloodGroup",
+                "nameLocation": "411:10:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "400:21:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_BloodGroup_$141",
+                  "typeString": "enum DonorRegister.BloodGroup"
+                },
+                "typeName": {
+                  "id": 156,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 155,
+                    "name": "BloodGroup",
+                    "nameLocations": [
+                      "400:10:1"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 141,
+                    "src": "400:10:1"
+                  },
+                  "referencedDeclaration": 141,
+                  "src": "400:10:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_BloodGroup_$141",
+                    "typeString": "enum DonorRegister.BloodGroup"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 159,
+                "mutability": "mutable",
+                "name": "isActive",
+                "nameLocation": "439:8:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "431:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 158,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "431:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 161,
+                "mutability": "mutable",
+                "name": "lastDonated",
+                "nameLocation": "465:11:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "457:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 160,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "457:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 163,
+                "mutability": "mutable",
+                "name": "donationCount",
+                "nameLocation": "494:13:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 164,
+                "src": "486:21:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 162,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "486:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Donor",
+            "nameLocation": "231:5:1",
+            "nodeType": "StructDefinition",
+            "scope": 365,
+            "src": "224:290:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 169,
+            "mutability": "mutable",
+            "name": "donors",
+            "nameLocation": "555:6:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 365,
+            "src": "520:41:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+              "typeString": "mapping(address => struct DonorRegister.Donor)"
+            },
+            "typeName": {
+              "id": 168,
+              "keyName": "",
+              "keyNameLocation": "-1:-1:-1",
+              "keyType": {
+                "id": 165,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "528:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "520:25:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                "typeString": "mapping(address => struct DonorRegister.Donor)"
+              },
+              "valueName": "",
+              "valueNameLocation": "-1:-1:-1",
+              "valueType": {
+                "id": 167,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 166,
+                  "name": "Donor",
+                  "nameLocations": [
+                    "539:5:1"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 164,
+                  "src": "539:5:1"
+                },
+                "referencedDeclaration": 164,
+                "src": "539:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                  "typeString": "struct DonorRegister.Donor"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "779163cb568883acd4f53ecd8b9b240d9167817266c43fa521301a32e8fd290b",
+            "id": 178,
+            "name": "DonorRegistered",
+            "nameLocation": "574:15:1",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 171,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "donorId",
+                  "nameLocation": "606:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 178,
+                  "src": "590:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 170,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "590:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 173,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "622:4:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 178,
+                  "src": "615:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 172,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 176,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "bloodGroup",
+                  "nameLocation": "639:10:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 178,
+                  "src": "628:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_BloodGroup_$141",
+                    "typeString": "enum DonorRegister.BloodGroup"
+                  },
+                  "typeName": {
+                    "id": 175,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 174,
+                      "name": "BloodGroup",
+                      "nameLocations": [
+                        "628:10:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 141,
+                      "src": "628:10:1"
+                    },
+                    "referencedDeclaration": 141,
+                    "src": "628:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_BloodGroup_$141",
+                      "typeString": "enum DonorRegister.BloodGroup"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "589:61:1"
+            },
+            "src": "568:83:1"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "12c3a9eff30b03d9267977d7415d257ec232160de05e168ed3331b2df758407c",
+            "id": 182,
+            "name": "DonorDeactivated",
+            "nameLocation": "662:16:1",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 181,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 180,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "donorId",
+                  "nameLocation": "695:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 182,
+                  "src": "679:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 179,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "678:25:1"
+            },
+            "src": "656:48:1"
+          },
+          {
+            "body": {
+              "id": 195,
+              "nodeType": "Block",
+              "src": "743:92:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "baseExpression": {
+                            "id": 187,
+                            "name": "donors",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 169,
+                            "src": "761:6:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                              "typeString": "mapping(address => struct DonorRegister.Donor storage ref)"
+                            }
+                          },
+                          "id": 189,
+                          "indexExpression": {
+                            "id": 188,
+                            "name": "id",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 184,
+                            "src": "768:2:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "761:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage",
+                            "typeString": "struct DonorRegister.Donor storage ref"
+                          }
+                        },
+                        "id": 190,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "772:8:1",
+                        "memberName": "isActive",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 159,
+                        "src": "761:19:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "446f6e6f72206e6f742072656769737465726564206f7220696e616374697665",
+                        "id": 191,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "782:34:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_27fa1ca437b8ded97904dd94fbf5e4adede4b4be873d7ac563cad0cf51ea6f4a",
+                          "typeString": "literal_string \"Donor not registered or inactive\""
+                        },
+                        "value": "Donor not registered or inactive"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_27fa1ca437b8ded97904dd94fbf5e4adede4b4be873d7ac563cad0cf51ea6f4a",
+                          "typeString": "literal_string \"Donor not registered or inactive\""
+                        }
+                      ],
+                      "id": 186,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "753:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "753:64:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 193,
+                  "nodeType": "ExpressionStatement",
+                  "src": "753:64:1"
+                },
+                {
+                  "id": 194,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "827:1:1"
+                }
+              ]
+            },
+            "id": 196,
+            "name": "donorExists",
+            "nameLocation": "719:11:1",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 185,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 184,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "739:2:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 196,
+                  "src": "731:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 183,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "731:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "730:12:1"
+            },
+            "src": "710:125:1",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 284,
+              "nodeType": "Block",
+              "src": "1094:852:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 220,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 218,
+                          "name": "_donorId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 198,
+                          "src": "1112:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "id": 219,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15,
+                          "src": "1124:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1112:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4f776e65722063616e6e6f74206265206120646f6e6f72",
+                        "id": 221,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1131:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c929f4c5a3b0df5abc8b9f6e94d77dd48d4f43d66addace7d33a8c64eebeaa89",
+                          "typeString": "literal_string \"Owner cannot be a donor\""
+                        },
+                        "value": "Owner cannot be a donor"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c929f4c5a3b0df5abc8b9f6e94d77dd48d4f43d66addace7d33a8c64eebeaa89",
+                          "typeString": "literal_string \"Owner cannot be a donor\""
+                        }
+                      ],
+                      "id": 217,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1104:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 222,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1104:53:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 223,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1104:53:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 229,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1175:26:1",
+                        "subExpression": {
+                          "expression": {
+                            "baseExpression": {
+                              "id": 225,
+                              "name": "donors",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 169,
+                              "src": "1176:6:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                                "typeString": "mapping(address => struct DonorRegister.Donor storage ref)"
+                              }
+                            },
+                            "id": 227,
+                            "indexExpression": {
+                              "id": 226,
+                              "name": "_donorId",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 198,
+                              "src": "1183:8:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1176:16:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Donor_$164_storage",
+                              "typeString": "struct DonorRegister.Donor storage ref"
+                            }
+                          },
+                          "id": 228,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1193:8:1",
+                          "memberName": "isActive",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 159,
+                          "src": "1176:25:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "446f6e6f7220616c72656164792072656769737465726564",
+                        "id": 230,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1203:26:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_f27ce177c62d4571581c398a691cfec81f77c654d1e7d9c23b5902452b04c00d",
+                          "typeString": "literal_string \"Donor already registered\""
+                        },
+                        "value": "Donor already registered"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_f27ce177c62d4571581c398a691cfec81f77c654d1e7d9c23b5902452b04c00d",
+                          "typeString": "literal_string \"Donor already registered\""
+                        }
+                      ],
+                      "id": 224,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1167:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 231,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1167:63:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 232,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1167:63:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 240,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "id": 236,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 234,
+                            "name": "_age",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 202,
+                            "src": "1248:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">=",
+                          "rightExpression": {
+                            "hexValue": "3138",
+                            "id": 235,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1256:2:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_18_by_1",
+                              "typeString": "int_const 18"
+                            },
+                            "value": "18"
+                          },
+                          "src": "1248:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "id": 239,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 237,
+                            "name": "_age",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 202,
+                            "src": "1262:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<=",
+                          "rightExpression": {
+                            "hexValue": "3635",
+                            "id": 238,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1270:2:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_65_by_1",
+                              "typeString": "int_const 65"
+                            },
+                            "value": "65"
+                          },
+                          "src": "1262:10:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1248:24:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "416765206d757374206265206265747765656e20313820616e64203635",
+                        "id": 241,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1274:31:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_16ea7adf29dec41c6e11bb7daa0aa0c6292f9f6f4af9064e0983e1e0592b4f48",
+                          "typeString": "literal_string \"Age must be between 18 and 65\""
+                        },
+                        "value": "Age must be between 18 and 65"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_16ea7adf29dec41c6e11bb7daa0aa0c6292f9f6f4af9064e0983e1e0592b4f48",
+                          "typeString": "literal_string \"Age must be between 18 and 65\""
+                        }
+                      ],
+                      "id": 233,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1240:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 242,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1240:66:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 243,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1240:66:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 246,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "1324:14:1",
+                        "subExpression": {
+                          "id": 245,
+                          "name": "_medCondition",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 208,
+                          "src": "1325:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "446f6e6f72206861732061206469737175616c696679696e67206d65646963616c20636f6e646974696f6e",
+                        "id": 247,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1340:45:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_53bd2d75780af2f6f2ddab0a20330bb939798909eb19b26ad5d93adfec3bfa5a",
+                          "typeString": "literal_string \"Donor has a disqualifying medical condition\""
+                        },
+                        "value": "Donor has a disqualifying medical condition"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_53bd2d75780af2f6f2ddab0a20330bb939798909eb19b26ad5d93adfec3bfa5a",
+                          "typeString": "literal_string \"Donor has a disqualifying medical condition\""
+                        }
+                      ],
+                      "id": 244,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1316:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 248,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1316:70:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 249,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1316:70:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 257,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "arguments": [
+                              {
+                                "id": 253,
+                                "name": "_name",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 200,
+                                "src": "1410:5:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "id": 252,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "1404:5:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
+                                "typeString": "type(bytes storage pointer)"
+                              },
+                              "typeName": {
+                                "id": 251,
+                                "name": "bytes",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "1404:5:1",
+                                "typeDescriptions": {}
+                              }
+                            },
+                            "id": 254,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "nameLocations": [],
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1404:12:1",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_memory_ptr",
+                              "typeString": "bytes memory"
+                            }
+                          },
+                          "id": 255,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1417:6:1",
+                          "memberName": "length",
+                          "nodeType": "MemberAccess",
+                          "src": "1404:19:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 256,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1426:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "1404:23:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4e616d652063616e6e6f7420626520656d707479",
+                        "id": 258,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1429:22:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_1786c81c5bf1c93c94a3e63df6f65dc894961d7358d06345daa60c7e17cb737a",
+                          "typeString": "literal_string \"Name cannot be empty\""
+                        },
+                        "value": "Name cannot be empty"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_1786c81c5bf1c93c94a3e63df6f65dc894961d7358d06345daa60c7e17cb737a",
+                          "typeString": "literal_string \"Name cannot be empty\""
+                        }
+                      ],
+                      "id": 250,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1396:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 259,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1396:56:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 260,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1396:56:1"
+                },
+                {
+                  "expression": {
+                    "id": 276,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 261,
+                        "name": "donors",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 169,
+                        "src": "1463:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                          "typeString": "mapping(address => struct DonorRegister.Donor storage ref)"
+                        }
+                      },
+                      "id": 263,
+                      "indexExpression": {
+                        "id": 262,
+                        "name": "_donorId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 198,
+                        "src": "1470:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1463:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Donor_$164_storage",
+                        "typeString": "struct DonorRegister.Donor storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 265,
+                          "name": "_name",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 200,
+                          "src": "1520:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 266,
+                          "name": "_age",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 202,
+                          "src": "1557:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        {
+                          "id": 267,
+                          "name": "_place",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 204,
+                          "src": "1593:6:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 268,
+                          "name": "_mobile",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 206,
+                          "src": "1631:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "id": 269,
+                          "name": "_medCondition",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 208,
+                          "src": "1670:13:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        {
+                          "id": 270,
+                          "name": "_gender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 211,
+                          "src": "1715:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_Gender_$132",
+                            "typeString": "enum DonorRegister.Gender"
+                          }
+                        },
+                        {
+                          "id": 271,
+                          "name": "_bloodGroup",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 214,
+                          "src": "1754:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_BloodGroup_$141",
+                            "typeString": "enum DonorRegister.BloodGroup"
+                          }
+                        },
+                        {
+                          "hexValue": "74727565",
+                          "id": 272,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1797:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        {
+                          "hexValue": "30",
+                          "id": 273,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1833:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        {
+                          "hexValue": "30",
+                          "id": 274,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1866:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_Gender_$132",
+                            "typeString": "enum DonorRegister.Gender"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_BloodGroup_$141",
+                            "typeString": "enum DonorRegister.BloodGroup"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 264,
+                        "name": "Donor",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 164,
+                        "src": "1482:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Donor_$164_storage_ptr_$",
+                          "typeString": "type(struct DonorRegister.Donor storage pointer)"
+                        }
+                      },
+                      "id": 275,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "nameLocations": [
+                        "1502:4:1",
+                        "1539:3:1",
+                        "1575:5:1",
+                        "1613:6:1",
+                        "1652:16:1",
+                        "1697:11:1",
+                        "1736:10:1",
+                        "1779:8:1",
+                        "1815:11:1",
+                        "1848:13:1"
+                      ],
+                      "names": [
+                        "name",
+                        "age",
+                        "place",
+                        "mobile",
+                        "medicalCondition",
+                        "donorGender",
+                        "bloodGroup",
+                        "isActive",
+                        "lastDonated",
+                        "donationCount"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "1482:396:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Donor_$164_memory_ptr",
+                        "typeString": "struct DonorRegister.Donor memory"
+                      }
+                    },
+                    "src": "1463:415:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Donor_$164_storage",
+                      "typeString": "struct DonorRegister.Donor storage ref"
+                    }
+                  },
+                  "id": 277,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1463:415:1"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 279,
+                        "name": "_donorId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 198,
+                        "src": "1910:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 280,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 200,
+                        "src": "1920:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 281,
+                        "name": "_bloodGroup",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 214,
+                        "src": "1927:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_BloodGroup_$141",
+                          "typeString": "enum DonorRegister.BloodGroup"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_BloodGroup_$141",
+                          "typeString": "enum DonorRegister.BloodGroup"
+                        }
+                      ],
+                      "id": 278,
+                      "name": "DonorRegistered",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 178,
+                      "src": "1894:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_enum$_BloodGroup_$141_$returns$__$",
+                        "typeString": "function (address,string memory,enum DonorRegister.BloodGroup)"
+                      }
+                    },
+                    "id": 282,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1894:45:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 283,
+                  "nodeType": "EmitStatement",
+                  "src": "1889:50:1"
+                }
+              ]
+            },
+            "functionSelector": "ef254814",
+            "id": 285,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDonor",
+            "nameLocation": "850:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 215,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 198,
+                  "mutability": "mutable",
+                  "name": "_donorId",
+                  "nameLocation": "876:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "868:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "868:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 200,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "909:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "894:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 199,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "894:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 202,
+                  "mutability": "mutable",
+                  "name": "_age",
+                  "nameLocation": "932:4:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "924:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "924:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 204,
+                  "mutability": "mutable",
+                  "name": "_place",
+                  "nameLocation": "961:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "946:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 203,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "946:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 206,
+                  "mutability": "mutable",
+                  "name": "_mobile",
+                  "nameLocation": "985:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "977:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 205,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "977:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 208,
+                  "mutability": "mutable",
+                  "name": "_medCondition",
+                  "nameLocation": "1010:13:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "1002:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1002:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 211,
+                  "mutability": "mutable",
+                  "name": "_gender",
+                  "nameLocation": "1041:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "1033:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Gender_$132",
+                    "typeString": "enum DonorRegister.Gender"
+                  },
+                  "typeName": {
+                    "id": 210,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 209,
+                      "name": "Gender",
+                      "nameLocations": [
+                        "1033:6:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 132,
+                      "src": "1033:6:1"
+                    },
+                    "referencedDeclaration": 132,
+                    "src": "1033:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Gender_$132",
+                      "typeString": "enum DonorRegister.Gender"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 214,
+                  "mutability": "mutable",
+                  "name": "_bloodGroup",
+                  "nameLocation": "1069:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 285,
+                  "src": "1058:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_BloodGroup_$141",
+                    "typeString": "enum DonorRegister.BloodGroup"
+                  },
+                  "typeName": {
+                    "id": 213,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 212,
+                      "name": "BloodGroup",
+                      "nameLocations": [
+                        "1058:10:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 141,
+                      "src": "1058:10:1"
+                    },
+                    "referencedDeclaration": 141,
+                    "src": "1058:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_BloodGroup_$141",
+                      "typeString": "enum DonorRegister.BloodGroup"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "858:228:1"
+            },
+            "returnParameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1094:0:1"
+            },
+            "scope": 365,
+            "src": "841:1105:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 341,
+              "nodeType": "Block",
+              "src": "2424:312:1",
+              "statements": [
+                {
+                  "assignments": [
+                    315
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 315,
+                      "mutability": "mutable",
+                      "name": "d",
+                      "nameLocation": "2448:1:1",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 341,
+                      "src": "2434:15:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                        "typeString": "struct DonorRegister.Donor"
+                      },
+                      "typeName": {
+                        "id": 314,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 313,
+                          "name": "Donor",
+                          "nameLocations": [
+                            "2434:5:1"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 164,
+                          "src": "2434:5:1"
+                        },
+                        "referencedDeclaration": 164,
+                        "src": "2434:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                          "typeString": "struct DonorRegister.Donor"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 319,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 316,
+                      "name": "donors",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 169,
+                      "src": "2452:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                        "typeString": "mapping(address => struct DonorRegister.Donor storage ref)"
+                      }
+                    },
+                    "id": 318,
+                    "indexExpression": {
+                      "id": 317,
+                      "name": "_donorId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 287,
+                      "src": "2459:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2452:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Donor_$164_storage",
+                      "typeString": "struct DonorRegister.Donor storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2434:34:1"
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "expression": {
+                          "id": 320,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2499:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 321,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2501:4:1",
+                        "memberName": "name",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 143,
+                        "src": "2499:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 322,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2519:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 323,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2521:3:1",
+                        "memberName": "age",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 145,
+                        "src": "2519:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 324,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2538:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 325,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2540:5:1",
+                        "memberName": "place",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 147,
+                        "src": "2538:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 326,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2559:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 327,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2561:11:1",
+                        "memberName": "donorGender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 154,
+                        "src": "2559:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Gender_$132",
+                          "typeString": "enum DonorRegister.Gender"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 328,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2586:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 329,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2588:10:1",
+                        "memberName": "bloodGroup",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 157,
+                        "src": "2586:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_BloodGroup_$141",
+                          "typeString": "enum DonorRegister.BloodGroup"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 330,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2612:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 331,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2614:16:1",
+                        "memberName": "medicalCondition",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 151,
+                        "src": "2612:18:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 332,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2644:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 333,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2646:11:1",
+                        "memberName": "lastDonated",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 161,
+                        "src": "2644:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 334,
+                          "name": "d",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "2671:1:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Donor_$164_storage_ptr",
+                            "typeString": "struct DonorRegister.Donor storage pointer"
+                          }
+                        },
+                        "id": 335,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "2673:13:1",
+                        "memberName": "donationCount",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 163,
+                        "src": "2671:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "id": 337,
+                            "name": "_donorId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 287,
+                            "src": "2710:8:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 336,
+                          "name": "balanceOf",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 77,
+                          "src": "2700:9:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_uint256_$",
+                            "typeString": "function (address) view returns (uint256)"
+                          }
+                        },
+                        "id": 338,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2700:19:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 339,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "2485:244:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_string_storage_$_t_uint8_$_t_string_storage_$_t_enum$_Gender_$132_$_t_enum$_BloodGroup_$141_$_t_bool_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(string storage ref,uint8,string storage ref,enum DonorRegister.Gender,enum DonorRegister.BloodGroup,bool,uint256,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 312,
+                  "id": 340,
+                  "nodeType": "Return",
+                  "src": "2478:251:1"
+                }
+              ]
+            },
+            "functionSelector": "96c59043",
+            "id": 342,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 290,
+                    "name": "_donorId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 287,
+                    "src": "2036:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 291,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 289,
+                  "name": "donorExists",
+                  "nameLocations": [
+                    "2024:11:1"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 196,
+                  "src": "2024:11:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2024:21:1"
+              }
+            ],
+            "name": "getDonor",
+            "nameLocation": "1961:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 288,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 287,
+                  "mutability": "mutable",
+                  "name": "_donorId",
+                  "nameLocation": "1978:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "1970:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 286,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1970:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1969:18:1"
+            },
+            "returnParameters": {
+              "id": 312,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 293,
+                  "mutability": "mutable",
+                  "name": "dName",
+                  "nameLocation": "2091:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2076:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 292,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2076:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 295,
+                  "mutability": "mutable",
+                  "name": "age",
+                  "nameLocation": "2125:3:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2110:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 294,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2110:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 297,
+                  "mutability": "mutable",
+                  "name": "place",
+                  "nameLocation": "2157:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2142:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 296,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2142:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 300,
+                  "mutability": "mutable",
+                  "name": "donorGender",
+                  "nameLocation": "2191:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2176:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Gender_$132",
+                    "typeString": "enum DonorRegister.Gender"
+                  },
+                  "typeName": {
+                    "id": 299,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 298,
+                      "name": "Gender",
+                      "nameLocations": [
+                        "2176:6:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 132,
+                      "src": "2176:6:1"
+                    },
+                    "referencedDeclaration": 132,
+                    "src": "2176:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Gender_$132",
+                      "typeString": "enum DonorRegister.Gender"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 303,
+                  "mutability": "mutable",
+                  "name": "bloodGroup",
+                  "nameLocation": "2231:10:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2216:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_BloodGroup_$141",
+                    "typeString": "enum DonorRegister.BloodGroup"
+                  },
+                  "typeName": {
+                    "id": 302,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 301,
+                      "name": "BloodGroup",
+                      "nameLocations": [
+                        "2216:10:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 141,
+                      "src": "2216:10:1"
+                    },
+                    "referencedDeclaration": 141,
+                    "src": "2216:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_BloodGroup_$141",
+                      "typeString": "enum DonorRegister.BloodGroup"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 305,
+                  "mutability": "mutable",
+                  "name": "medicalCondition",
+                  "nameLocation": "2270:16:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2255:31:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 304,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2255:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 307,
+                  "mutability": "mutable",
+                  "name": "lastDonated",
+                  "nameLocation": "2315:11:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2300:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 306,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2300:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 309,
+                  "mutability": "mutable",
+                  "name": "donationCount",
+                  "nameLocation": "2355:13:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2340:28:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 308,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2340:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 311,
+                  "mutability": "mutable",
+                  "name": "tokenBalance",
+                  "nameLocation": "2397:12:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 342,
+                  "src": "2382:27:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 310,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2382:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2062:357:1"
+            },
+            "scope": 365,
+            "src": "1952:784:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 363,
+              "nodeType": "Block",
+              "src": "2824:91:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 357,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 352,
+                          "name": "donors",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 169,
+                          "src": "2834:6:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Donor_$164_storage_$",
+                            "typeString": "mapping(address => struct DonorRegister.Donor storage ref)"
+                          }
+                        },
+                        "id": 354,
+                        "indexExpression": {
+                          "id": 353,
+                          "name": "_donorId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 344,
+                          "src": "2841:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "2834:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Donor_$164_storage",
+                          "typeString": "struct DonorRegister.Donor storage ref"
+                        }
+                      },
+                      "id": 355,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "2851:8:1",
+                      "memberName": "isActive",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 159,
+                      "src": "2834:25:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "66616c7365",
+                      "id": 356,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2862:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "2834:33:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 358,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2834:33:1"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 360,
+                        "name": "_donorId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 344,
+                        "src": "2899:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 359,
+                      "name": "DonorDeactivated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 182,
+                      "src": "2882:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 361,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2882:26:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 362,
+                  "nodeType": "EmitStatement",
+                  "src": "2877:31:1"
+                }
+              ]
+            },
+            "functionSelector": "b76863a8",
+            "id": 364,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 347,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 346,
+                  "name": "onlyOwner",
+                  "nameLocations": [
+                    "2792:9:1"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 45,
+                  "src": "2792:9:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2792:9:1"
+              },
+              {
+                "arguments": [
+                  {
+                    "id": 349,
+                    "name": "_donorId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 344,
+                    "src": "2814:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 350,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 348,
+                  "name": "donorExists",
+                  "nameLocations": [
+                    "2802:11:1"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 196,
+                  "src": "2802:11:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2802:21:1"
+              }
+            ],
+            "name": "deactivateDonor",
+            "nameLocation": "2751:15:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 345,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 344,
+                  "mutability": "mutable",
+                  "name": "_donorId",
+                  "nameLocation": "2775:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 364,
+                  "src": "2767:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 343,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2767:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2766:18:1"
+            },
+            "returnParameters": {
+              "id": 351,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2824:0:1"
+            },
+            "scope": 365,
+            "src": "2742:173:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 366,
+        "src": "83:2834:1",
+        "usedErrors": [],
+        "usedEvents": [
+          27,
+          33,
+          178,
+          182
+        ]
+      }
+    ],
+    "src": "32:2885:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2026-04-20T11:28:40.636Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

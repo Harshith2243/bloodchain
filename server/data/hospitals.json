@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "City General Hospital",
+    "location": "Downtown",
+    "coords": [17.4447, 78.3758],
+    "distance": "0.8 km",
+    "type": "Hospital",
+    "availability": "High",
+    "contact": "+1 (555) 0123"
+  },
+  {
+    "id": 2,
+    "name": "Red Cross Blood Bank",
+    "location": "North Hills",
+    "coords": [17.4823, 78.4289],
+    "distance": "2.4 km",
+    "type": "Blood Bank",
+    "availability": "Medium",
+    "contact": "+1 (555) 0456"
+  },
+  {
+    "id": 3,
+    "name": "St. Jude Medical Center",
+    "location": "Westside",
+    "coords": [17.4189, 78.3364],
+    "distance": "4.1 km",
+    "type": "Hospital",
+    "availability": "High",
+    "contact": "+1 (555) 0789"
+  },
+  {
+    "id": 4,
+    "name": "Unity Charity Clinic",
+    "location": "East End",
+    "coords": [17.4412, 78.4521],
+    "distance": "1.2 km",
+    "type": "Clinic",
+    "availability": "Low",
+    "contact": "+1 (555) 0321"
+  }
+]
